@@ -5,7 +5,7 @@ function randomNumber (a, b) {
   const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
   const result = Math.random() * (upper - lower + 1) + lower;
   return Math.floor(result);
-};
+}
 
 randomNumber(0,9);
 
@@ -92,11 +92,11 @@ const createDescriptionPhoto = (i) => {
 
 const createFullPhotoElement = () =>{
 
-  let descriotionPhoto = [];
+  const descriotionPhoto = [];
 
   for(let i=0; i<24; i++) {
     descriotionPhoto[i] = createDescriptionPhoto(i);
-  };
+  }
   return descriotionPhoto;
 };
 
