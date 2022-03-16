@@ -14,7 +14,7 @@ randomNumber(0,9);
 function comparLengthString (string, stringMax) {
   return(string.length <= stringMax);
 }
-comparLengthString ();
+comparLengthString ('dfdjhsodzihgf');
 
 const photoText = [
   'Море',
@@ -61,35 +61,43 @@ const createCommentPhoto = () => {
 
   lastIdComment++;
 
-  const createAvatarLink = 'img/avatar-' + randomNumber(1, 6) +'.svg';
+  const createAvatarLink = `img/avatar-${randomNumber(1, 6)}.svg`;
 
-  const createCommentAutor = randomNumber(0, massageName.length-1);
+  const createCommentAutor = randomNumber(0, messageName.length-1);
+
+  const createMessageIndex = randomNumber(0, messageText.length-1);
 
   return {
     id: lastIdComment,
     avatar: createAvatarLink,
-    message: randomNumber,
-    name: createCommentAutor,
+    message: messageText[createMessageIndex ],
+    name: messageName[createCommentAutor],
   };
 };
 
-const createDescriptionPhoto = () => {
+const createDescriptionPhoto = (i) => {
 
   const randomDescriptionIndex = randomNumber(0, photoText.length-1);
 
-  const createDescriptionUrl = 'photos/' + i + '.jpg';
+  const createDescriptionUrl = `photos/${i}.jpg`;
 
   return {
     id: i,
     url: createDescriptionUrl,
     description: photoText[randomDescriptionIndex],
     likes: randomNumber(15, 200),
-    comments: createCommentPhoto (),
+    comments: Array.from({length: 2}, createCommentPhoto),
   };
 };
 
-let descriotionPhoto = [];
+const createFullPhotoElement = () =>{
 
-for(let i=1; i<25; i++) {
-  descriotionPhoto[i] = createDescriptionPhoto();
+  let descriotionPhoto = [];
+
+  for(let i=0; i<24; i++) {
+    descriotionPhoto[i] = createDescriptionPhoto(i);
+  };
+  return descriotionPhoto;
 };
+
+createFullPhotoElement();
