@@ -1,4 +1,5 @@
 import {randomNumber} from './util.js';
+import './util.js';
 
 const photoText = [
   'Море',
@@ -83,7 +84,5 @@ const createFullPhotoElement = () =>{
   }
   return descriotionPhoto;
 };
-
-createFullPhotoElement();
 
 export {createFullPhotoElement};

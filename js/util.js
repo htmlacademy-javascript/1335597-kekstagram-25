@@ -7,6 +7,4 @@ function randomNumber (a, b) {
   return Math.floor(result);
 }
 
-randomNumber(0,9);
-
 export {randomNumber};

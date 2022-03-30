@@ -1,6 +1,5 @@
 //Подключение модулей
 import './data.js';
-import './util.js';
 import {createFullPhotoElement} from './data.js';
 
 createFullPhotoElement();
