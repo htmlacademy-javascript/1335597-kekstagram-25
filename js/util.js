@@ -7,4 +7,13 @@ function randomNumber (a, b) {
   return Math.floor(result);
 }
 
+//Функция сравнения длины строки с максимальной длиной
+
+function comparLengthString (string, stringMax) {
+  return(string.length <= stringMax);
+}
+comparLengthString ('dfdjhsodzihgf');
+
 export {randomNumber};
+
+export {comparLengthString};
