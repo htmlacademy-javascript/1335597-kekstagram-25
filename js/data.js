@@ -75,11 +75,11 @@ const createDescriptionPhoto = (i) => {
   };
 };
 
-const createFullPhotoElement = () =>{
+const createFullPhotoElement = (count=24) =>{
 
   const descriotionPhoto = [];
 
-  for(let i=0; i<24; i++) {
+  for(let i=0; i<count; i++) {
     descriotionPhoto[i] = createDescriptionPhoto(i);
   }
   return descriotionPhoto;
